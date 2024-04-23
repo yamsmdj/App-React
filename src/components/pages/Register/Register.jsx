@@ -4,6 +4,20 @@ import { Navigate , Link } from "react-router-dom";
 const Register = ({link, msg}) => {
 
     const [user, setUser] = useState(false);
+    
+    const UserRegex = /^[a-zA-Z][a-zA-Z0-9-]{3,23}$/;
+    const PasswordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@&#$%]).{8,23}$/;
+    const EmailRegex = /^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
+    const PhoneNumberRegex = /^+(?:\d{1,3})?\d{10,14}$/;
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+
+    const [isValidUsername, setIsValidUsername] = useState(false);
+    const [isValidEmail, setIsValidEmail] = useState(false);
+    const [isValidPhone, setIsValidPhone] = useState(false);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();

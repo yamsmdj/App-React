@@ -2,6 +2,8 @@ import React from 'react';
 import Register from './Register';
 
 const index = () => {
+
+    
     return (
         <div className='container'>
             <div className="row justify-content-center">
